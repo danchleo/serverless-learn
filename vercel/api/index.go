@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"time"
-	"serverless_learn/handlers"
+	"github.com/danchleo/serverless-learn/handlers"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
