@@ -37,6 +37,8 @@ jobs:
       run: |
         npm i -g vercel
         cd vercel
+        echo >> go.mod
+        echo "require github.com/danchleo/serverless-learn latest" >> go.mod
         vercel --token $VERCEL_TOKEN --confirm
         echo "deploy success"
         
