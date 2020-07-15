@@ -13,8 +13,7 @@ on:
     inputs:
       token:
         description: 'https://vercel.com/account/tokens'
-        required: true
-        default: ${{ secrets.VERCEL_TOKEN }}
+        required: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -38,6 +37,10 @@ jobs:
       run: |
         npm i -g vercel
         cd vercel
+        if test -z "$VERCEL_TOKEN"
+        then
+          VERCEL_TOKEN=${{ secrets.VERCEL_TOKEN }}
+        fi
         vercel --token $VERCEL_TOKEN --confirm
         echo "deploy success"
         
