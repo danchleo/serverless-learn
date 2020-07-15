@@ -14,6 +14,7 @@ on:
       token:
         description: 'https://vercel.com/account/tokens'
         required: true
+        default: ${{ secrets.VERCEL_TOKEN }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
